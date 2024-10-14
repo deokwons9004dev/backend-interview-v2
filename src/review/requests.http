@@ -1,0 +1,9 @@
+### Create a new review request. This requires that I first login as an existing user.
+POST http://localhost:3000/review
+Content-Type: application/json
+
+{
+    "productId": 33,
+    "rating": 4,
+    "comment": "This is a great product. I love it."
+}

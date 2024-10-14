@@ -1,0 +1,41 @@
+### Test a new user signup.
+POST http://localhost:3000/auth/signup
+Content-Type: application/json
+
+{
+    "email": "test2@gmail.com",
+    "password": "test1234"
+}
+
+### Test an existing user login.
+POST http://localhost:3000/auth/signin
+Content-Type: application/json
+
+{
+    "email": "test2@gmail.com",
+    "password": "test1234"
+}
+
+### Test an existing user whoami using the JWT bearer token.
+GET http://localhost:3000/auth/whoami
+Authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoidGVzdDFAZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3Mjg2NDU0ODYsImV4cCI6MTcyODY0NTU0Nn0.wZa7WJZ1g3DcYAn0APK8QdnZmLJ1KpB8rPRJIgk49Vo
+
+### Test an existing user whoami using cookies
+GET http://localhost:3000/auth/whoami
+
+### Testing signout.
+POST http://localhost:3000/auth/signout
+
+
+### Testing the product search feature (filters ans sorting)
+GET http://localhost:3000/product/find?filters=name:Jeans,color:Blue,brand:BrandA&sort=size&order=desc
+
+### Testing the product search feature (filters ans sorting)
+GET http://localhost:3000/product/find?filters=name:Jeans&sort=price&order=asc
+
+
+### Testing basic search GET.
+GET http://localhost:3000/product/1
+
+### Testing basic GET all.
+GET http://localhost:3000/product/all
